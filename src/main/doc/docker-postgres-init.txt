@@ -1,0 +1,14 @@
+https://www.commandprompt.com/education/how-to-create-a-postgresql-database-in-docker/
+
+docker pull postgres
+
+docker run --name tutorialdb -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
+
+docker run -d --name postgresCont -p 5432:5432 -e POSTGRES_PASSWORD=pass123 postgres
+
+docker exec -it postgresCont bash
+
+psql -h localhost -U postgres
+
+\l
+\c tutorialdb;
